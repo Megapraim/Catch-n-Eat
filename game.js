@@ -9,7 +9,6 @@ function move1(button) { //Moving for player 1
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
 			newLocations.setAttribute("class", "player1");
 		}
 	}
@@ -21,7 +20,6 @@ function move1(button) { //Moving for player 1
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
 			newLocations.setAttribute("class", "player1");
 		}
 	} 
@@ -30,11 +28,9 @@ function move1(button) { //Moving for player 1
 		player = document.getElementsByClassName("player1")[0];
 		locations = player.id;
 		locations = (locations[0] - 1) + locations[1];
-		console.log(locations);
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
 			newLocations.setAttribute("class", "player1");
 		}
 	}
@@ -46,7 +42,6 @@ function move1(button) { //Moving for player 1
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
 			newLocations.setAttribute("class", "player1");
 		}
 	}
@@ -64,7 +59,6 @@ function move2(button) { //Moving for player 2
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			//console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	}
@@ -76,7 +70,6 @@ function move2(button) { //Moving for player 2
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			//console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	} 
@@ -89,7 +82,6 @@ function move2(button) { //Moving for player 2
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-		//	console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	}
@@ -101,11 +93,11 @@ function move2(button) { //Moving for player 2
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			//console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	}
 }
+
 //Check, is it on the board?
 function onBoard(locations) {
 	if ((locations[0] == 0) || (locations[1] == 0)) {
