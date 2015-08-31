@@ -1,0 +1,23 @@
+body {
+	background-color: #8A8A7B;
+}
+
+td {
+	background-color: #00B32D;
+	width: 60px;
+	height: 60px;
+}
+
+table {
+	background-color: #006633	;
+	border-spacing: 5px;
+	margin: auto;
+}
+
+td.player1 {
+	background-color: #FF2626;
+}
+
+td.player2 {
+	background-color: #2626FF;
+}
