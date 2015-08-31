@@ -57,31 +57,31 @@ function move2(button) { //Moving for player 2
 	var locations;
 	console.log(button.keyCode);
 	// Moving right
-	if (button.keyCode === 100) {
+	if ((button.keyCode === 68) || (button.keyCode === 100)) { //Two different keycodes for d and D. The same below.
 		player = document.getElementsByClassName("player2")[0];
 		locations = player.id;
 		locations = locations[0] + (locations[1] - (-1));	
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
+			//console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	}
 	//Moving left
-	if (button.keyCode === 97) {
+	if ((button.keyCode === 65) || (button.keyCode === 97)) {
 		player = document.getElementsByClassName("player2")[0];
 		locations = player.id;
 		locations = locations[0] + (locations[1] - 1);
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
+			//console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	} 
 	//Moving up
-	if (button.keyCode === 119) {
+	if ((button.keyCode === 87) || (button.keyCode === 119)) {
 		player = document.getElementsByClassName("player2")[0];
 		locations = player.id;
 		locations = (locations[0] - 1) + locations[1];
@@ -89,19 +89,19 @@ function move2(button) { //Moving for player 2
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
+		//	console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	}
 	//Moving down
-	if (button.keyCode === 115) {
+	if ((button.keyCode === 83) || (button.keyCode === 115)) {
 		player = document.getElementsByClassName("player2")[0];
 		locations = player.id;
 		locations = (locations[0] - (-1)) + locations[1];
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
-			console.log(newLocations);
+			//console.log(newLocations);
 			newLocations.setAttribute("class", "player2");
 		}
 	}
