@@ -1,25 +1,28 @@
+//Initialising constants
+var RIGHT_ARROW = 39;
+var LEFT_ARROW = 37;
+var UP_ARROW = 38;
+var DOWN_ARROW = 40;
+var LOWERCASE_D = 68;
+var UPPERCASE_D = 100;
+var LOWERCASE_A = 65;
+var UPPERCASE_A = 97;
+var LOWERCASE_W =87;
+var UPPERCASE_W =119;
+var LOWERCASE_S =83;
+var UPPERCASE_S =115;
+
 function checkNumber(player, button, direction, key1, key2) {
-	if (player == "player2") { //If player2, then check 2 keyCodes (for D and d, W and w, etc.) 
-		if ((button.keyCode == key1) || (button.keyCode == key2)) {
-			var play = document.getElementsByClassName("player2")[0];
-			var locations = directions(direction, play);
-			if (onBoard(locations)) {
-				play.removeAttribute("class");
-				var newLocations = document.getElementById(locations);
-				newLocations.setAttribute("class", "player2");
-			}
-		}	
-	} else if (player == "player1") { //If player1, then only 1 keyCode (cause arrows can't be ARROWS) 
-		if (button.keyCode == key1) {
-			var play = document.getElementsByClassName("player1")[0];
-			var locations = directions(direction, play);
-			if (onBoard(locations)) {
-				play.removeAttribute("class");
-				var newLocations = document.getElementById(locations);
-				newLocations.setAttribute("class", "player1");
-			}
+	if ((button.keyCode == key1) || (button.keyCode == key2)) { 
+	//For player 1 we need only keyCode1 (ignoring keyCode2), second keyCode is only for player 2 (because there are different codes for d and D, w and W, etc.)
+		var play = document.getElementsByClassName(player)[0];
+		var locations = directions(direction, play);
+		if (onBoard(locations)) {
+			play.removeAttribute("class");
+			var newLocations = document.getElementById(locations);
+			newLocations.setAttribute("class", player);
 		}
-	}
+	}	
 }
 
 function directions(direction, player) { //Generates locations for different directions
@@ -32,15 +35,15 @@ function directions(direction, player) { //Generates locations for different dir
 
 function move(button) {
 	//Player 1 moves
-	checkNumber("player1", button, "right", 39);
-	checkNumber("player1", button, "left", 37);
-	checkNumber("player1", button, "up", 38);
-	checkNumber("player1", button, "down", 40);
+	checkNumber("player1", button, "right", RIGHT_ARROW);
+	checkNumber("player1", button, "left", LEFT_ARROW);
+	checkNumber("player1", button, "up", UP_ARROW);
+	checkNumber("player1", button, "down", DOWN_ARROW);
 	//Player 2 moves
-	checkNumber("player2", button, "right", 68, 100);
-	checkNumber("player2", button, "left", 65, 97);
-	checkNumber("player2", button, "up", 87, 119);
-	checkNumber("player2", button, "down", 83, 115);
+	checkNumber("player2", button, "right", LOWERCASE_D, UPPERCASE_D);
+	checkNumber("player2", button, "left", LOWERCASE_A, UPPERCASE_A);
+	checkNumber("player2", button, "up", LOWERCASE_W, UPPERCASE_W);
+	checkNumber("player2", button, "down", LOWERCASE_S, UPPERCASE_S);
 }
 
 //Check, is it on the board?
@@ -55,4 +58,3 @@ function onBoard(locations) {
 }
 
 window.onkeydown = move;
-window.onkeypress = move;
