@@ -78,7 +78,6 @@ function move2(button) { //Moving for player 2
 		player = document.getElementsByClassName("player2")[0];
 		locations = player.id;
 		locations = (locations[0] - 1) + locations[1];
-		console.log(locations);
 		if (onBoard(locations)) {
 			player.removeAttribute("class");
 			var newLocations = document.getElementById(locations);
