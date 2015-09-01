@@ -1,5 +1,5 @@
 function checkNumber(player, button, direction, key1, key2) {
-	if (player == "player2") { //If player2 then check 2 keyCodes (for D and d, W and w? etc.) 
+	if (player == "player2") { //If player2, then check 2 keyCodes (for D and d, W and w, etc.) 
 		if ((button.keyCode == key1) || (button.keyCode == key2)) {
 			var play = document.getElementsByClassName("player2")[0];
 			var locations = directions(direction, play);
@@ -9,7 +9,7 @@ function checkNumber(player, button, direction, key1, key2) {
 				newLocations.setAttribute("class", "player2");
 			}
 		}	
-	} else if (player == "player1") { //If player1 then only 1 keyCode (cause arrows can't be ARROWS) 
+	} else if (player == "player1") { //If player1, then only 1 keyCode (cause arrows can't be ARROWS) 
 		if (button.keyCode == key1) {
 			var play = document.getElementsByClassName("player1")[0];
 			var locations = directions(direction, play);
