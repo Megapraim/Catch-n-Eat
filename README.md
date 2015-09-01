@@ -4,6 +4,10 @@ Controls: </br>
   Player 1: arrow-keys;</br>
   Player 2: WASD-keys;</br>
 Please, I want to know your opinion. Write your thoughts, advices and ideas in the issue "Fan's Lobby".</br>
+# Version 0.1.7
+### First Steps 3: Revenge of the Constants
+Just a small update. We optimised our code and added some constants as Macromatics adviced.</br>
+P.S. User Macromatics is our first follower! Thank you!
 # Version 0.1.5  
 ### First Steps 2: Age of Optimisation
   The only difference from version 0.1 is really optimised game code. Now it looks much better! Check this out!
