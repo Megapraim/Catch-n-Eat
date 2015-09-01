@@ -1,100 +1,46 @@
-function move1(button) { //Moving for player 1
-	var player;
-	var locations;
-	//Moving right
-	if (button.keyCode === 39) {
-		player = document.getElementsByClassName("player1")[0];
-		locations = player.id;
-		locations = locations[0] + (locations[1] - (-1));
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player1");
-		}
-	}
-	//Moving left
-	if (button.keyCode === 37) {
-		player = document.getElementsByClassName("player1")[0];
-		locations = player.id;
-		locations = locations[0] + (locations[1] - 1);
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player1");
-		}
-	} 
-	//Moving up
-	if (button.keyCode === 38) {
-		player = document.getElementsByClassName("player1")[0];
-		locations = player.id;
-		locations = (locations[0] - 1) + locations[1];
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player1");
-		}
-	}
-	//Moving down
-	if (button.keyCode === 40) {
-		player = document.getElementsByClassName("player1")[0];
-		locations = player.id;
-		locations = (locations[0] - (-1)) + locations[1];
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player1");
+function checkNumber(player, button, direction, key1, key2) {
+	if (player == "player2") { //If player2 then check 2 keyCodes (for D and d, W and w? etc.) 
+		if ((button.keyCode == key1) || (button.keyCode == key2)) {
+			var play = document.getElementsByClassName("player2")[0];
+			var locations = directions(direction, play);
+			if (onBoard(locations)) {
+				play.removeAttribute("class");
+				var newLocations = document.getElementById(locations);
+				newLocations.setAttribute("class", "player2");
+			}
+		}	
+	} else if (player == "player1") { //If player1 then only 1 keyCode (cause arrows can't be ARROWS) 
+		if (button.keyCode == key1) {
+			var play = document.getElementsByClassName("player1")[0];
+			var locations = directions(direction, play);
+			if (onBoard(locations)) {
+				play.removeAttribute("class");
+				var newLocations = document.getElementById(locations);
+				newLocations.setAttribute("class", "player1");
+			}
 		}
 	}
 }
 
-function move2(button) { //Moving for player 2
-	var player;
-	var locations;
-	console.log(button.keyCode);
-	// Moving right
-	if ((button.keyCode === 68) || (button.keyCode === 100)) { //Two different keycodes for d and D. The same below.
-		player = document.getElementsByClassName("player2")[0];
-		locations = player.id;
-		locations = locations[0] + (locations[1] - (-1));	
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player2");
-		}
-	}
-	//Moving left
-	if ((button.keyCode === 65) || (button.keyCode === 97)) {
-		player = document.getElementsByClassName("player2")[0];
-		locations = player.id;
-		locations = locations[0] + (locations[1] - 1);
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player2");
-		}
-	} 
-	//Moving up
-	if ((button.keyCode === 87) || (button.keyCode === 119)) {
-		player = document.getElementsByClassName("player2")[0];
-		locations = player.id;
-		locations = (locations[0] - 1) + locations[1];
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player2");
-		}
-	}
-	//Moving down
-	if ((button.keyCode === 83) || (button.keyCode === 115)) {
-		player = document.getElementsByClassName("player2")[0];
-		locations = player.id;
-		locations = (locations[0] - (-1)) + locations[1];
-		if (onBoard(locations)) {
-			player.removeAttribute("class");
-			var newLocations = document.getElementById(locations);
-			newLocations.setAttribute("class", "player2");
-		}
-	}
+function directions(direction, player) { //Generates locations for different directions
+	var locations = player.id;
+	if (direction == "right") {return (locations[0] + (locations[1] - (-1) ) ) }
+	if (direction == "left") {return (locations[0] + (locations[1] - 1 ) ) }
+	if (direction == "up") {return ((locations[0] - 1) + locations[1] ) }
+	if (direction == "down") {return ((locations[0] - (-1)) + locations[1] ) }
+}
+
+function move(button) {
+	//Player 1 moves
+	checkNumber("player1", button, "right", 39);
+	checkNumber("player1", button, "left", 37);
+	checkNumber("player1", button, "up", 38);
+	checkNumber("player1", button, "down", 40);
+	//Player 2 moves
+	checkNumber("player2", button, "right", 68, 100);
+	checkNumber("player2", button, "left", 65, 97);
+	checkNumber("player2", button, "up", 87, 119);
+	checkNumber("player2", button, "down", 83, 115);
 }
 
 //Check, is it on the board?
@@ -108,5 +54,5 @@ function onBoard(locations) {
 	return true;
 }
 
-window.onkeydown = move1;
-window.onkeypress = move2;
+window.onkeydown = move;
+window.onkeypress = move;
