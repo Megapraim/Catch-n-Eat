@@ -21,3 +21,24 @@ td.player1 {
 td.player2 {
 	background-color: #2626FF;
 }
+
+h1#winner1 {
+	color: #D90000;
+}
+
+h1#winner2 {
+	color: #0036D9;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	color: #006633;
+	text-align: center;
+}
+
+#winMessage {
+	width: 50%;
+}
