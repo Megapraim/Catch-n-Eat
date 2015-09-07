@@ -42,3 +42,24 @@ h2 {
 #winMessage {
 	width: 50%;
 }
+
+#score1 {
+	float: right;
+	color: #D90000;
+	font-size: 70px;
+}
+
+#score2 {
+	float: left;
+	color: #0036D9;
+	font-size: 70px;
+}
+
+div {
+	background-color: #00B32D;
+	border-width: 5px;
+	border-color: #006633;
+	border-style: double;
+	padding: 5px 10px;
+	margin: 290px 100px 0px 100px;
+}
