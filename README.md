@@ -4,6 +4,9 @@ Controls: </br>
   Player 1: arrow-keys;</br>
   Player 2: WASD-keys;</br>
 Please, I want to know your opinion. Write your thoughts, advices and ideas in the issue "Fan's Lobby".</br>
+# Version 0.2
+### JaSon Codes: Raiders of the Lost Objects
+  Ledy and gentlemen! Let me introduse you absolutely new fresh code for Cath-n-Eat!  Now we have code related to game standarts. We mean our game has Model, View and Controller objects. Also we added scoreboard to our game! Now you can store every point you scored! So, what are you waiting for? Check out Cath-n-Eat v0.2-alpha !
 # Version 0.1.10
 ### First Steps 4: Dark of the Winners
   Yeah! It's our first update in gameplay! Now you don't need to refresh page every time you want to play another time. This release would be last in v.0.1 branch. So, hold on and stay for big update v0.2 !!!
