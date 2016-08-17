@@ -4,6 +4,10 @@ Controls: </br>
   Player 1: arrow-keys;</br>
   Player 2: WASD-keys;</br>
 Please, I want to know your opinion. Write your thoughts, advices and ideas in the issue "Fan's Lobby".</br>
+
+# Version 0.2.1
+### JaSon Codes: The Temple of Cells
+This version is really important for the next development of our product. This way now we can change sizes of the game board and players' starting positions! At this stage we should do this only changing the JS file. But although that moment I described this step would give us the posibility to provide our next pre-release version with the biggest update from the beginning of this project development! Yeah, I'm talking about such a usefull thing like MENU ! So, see you soon!
 # Version 0.2
 ### JaSon Codes: Raiders of the Lost Objects
   Ledy and gentlemen! Let me introduse you absolutely new fresh code for Cath-n-Eat!  Now we have code related to game standarts. We mean our game has Model, View and Controller objects. Also we added scoreboard to our game! Now you can store every point you scored! So, what are you waiting for? Check out Cath-n-Eat v0.2-alpha !
